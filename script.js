@@ -5,12 +5,7 @@ let ua, world;
 const uaElem = document.querySelector('#ukraine .table_body');
 const worldElem = document.querySelector('#world .table_body');
 
-/*обробка дати */
-/*
-elemDate.valueAsDate = new Date(); // отримаэмо сьогоднішню дату
-console.log(new Date().toJSON().slice(0, 20));
-*/
-//чтобы избежать ошибки иза часового пояса в дате.
+
 Date.prototype.toDateInputValue = (function() {
 	let local = new Date(this);
 	local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
@@ -103,7 +98,6 @@ dataOutput();
 		tabsLinkTarget.classList.add('active');
 		tabsPaneTarget.classList.add('tabs_pane_show');
 		console.log(tabsPaneShow.id);
-		/* отключение лишних кнопок */
 		if(tabsPaneShow.id === 'ukraine' ){
 			if(document.querySelector('#ukraine .sort-active') !== null){
 				document.querySelector('#ukraine .sort-active').classList.remove('sort-active');
@@ -128,19 +122,16 @@ dataOutput();
 	
 }
 tabs();
-/* вешаем клики */
 (async() => {
 	const sortButtons = document.querySelectorAll('.sort');
 	for (var i = 0; i < sortButtons.length; i++) {
 		sortButtons[i].addEventListener('click', (e) => {
 			let sortType = e.target.getAttribute('data-sort');
 			sortData(sortType, e.target);
-			//e.target это наш элемент
 		});
 	}
 }) ()
 
-/* Функция сортировки */
 const sortData = (sortType, elemSort) => {
 	let sortTypeArr = sortType.split('-');
 
@@ -150,14 +141,7 @@ const sortData = (sortType, elemSort) => {
 
 	let arrForSort = sortRegion === 'ua' ? ua : world;
 	
-	/*arrForSort.sort((a, b) => {
-		if(sortDirection === 'down'){
-			return a[sortField] > b[sortField] ? 1 : -1;
-		}
-		return a[sortField] > b[sortField] ? -1 : 1;
-	}); */
-	/*return sortDirection === 'up' ? (a[sortField] > b[sortField] ? -1 : 1) : (a[sortField] > b[sortField] ? 1 : -1);*/
-	//окончательный вариант в котором есть обьединение для сортивки текста и цифр
+	
 	arrForSort.sort((a, b) => {
 		if(sortField === 'region'){
 			return sortDirection === 'up' ? (a[sortField].localeCompare(b[sortField])) : (b[sortField].localeCompare(a[sortField]));
