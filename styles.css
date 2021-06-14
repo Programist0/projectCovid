@@ -1,0 +1,161 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	font-family: 'Arial', sans-serif;
+	font-size: 18px;
+}
+.main{
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+	border: 1px solid black;
+}
+.container-calendar{
+	margin: 20px;
+}
+.container-calendar input{
+	height: 30px;
+	width: 250px;
+	font-size: 20px;
+}
+.table{
+	max-width: 80%;
+	border: 1px solid #777;
+	border-spacing: 0px;
+	margin: 0 auto;
+}
+.table_cell{
+	border-right: 1px solid #777;
+	border-bottom: 1px solid #777;
+	width: auto;
+	text-align: center;
+	height: 1.5em;
+	min-width: 50%;
+	padding: 5px;
+	box-sizing: border-box;
+}
+.table_cell:last-child{
+	border-right: none;
+}
+.table_row:last-child .table_cell{
+	border-bottom: none;
+}
+.table_head-cell{
+	font-size: 1.1em;
+	font-weight: bold;
+	border-bottom: 2px solid #777!important;
+}
+.tabs_nav{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-around;
+	background-color: #bbb;
+}
+.tab_links{
+	text-decoration: none;
+	display: block;
+	width: 40%;
+	text-align: center;
+	border: 1px solid #ccc;
+}
+.tab_links:hover{
+	background-color: #888;
+}
+.tab_links:visited{
+	color: blue;
+}
+.tabs_nav .active{
+	color: black;
+	background-color: #888;
+	cursor: default;
+}
+.tabs_pane{
+	display: none;
+}
+.tabs_pane_show{
+	display: block;
+}
+.table_row:hover .table_cell{
+	background-color: #f7f7f7;
+	cursor: grab;
+}
+
+/* sort-buttons */
+.sort-wrapper{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	width: 20px;
+}
+.sort-up, .sort-down{
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	cursor: pointer;
+}
+.sort-up{
+	border-top: 10px solid #777;
+}
+.sort-up:hover{
+	border-top: 10px solid #333;
+}
+.sort-down{
+	border-bottom: 10px solid #777;
+}
+.sort-down:hover{
+	border-bottom: 10px solid #333;
+}
+.sort-active{
+	border-bottom-color: red;
+	border-top-color: red;
+}
+
+/* infographic */
+.infographic{
+	font-size: 0.8em;
+	background-color: #eee;
+	padding: 20px;
+	width: 24%;
+	position: fixed;
+	top: 5%;
+	right: 1%;
+	height: 80%;
+	overflow: hidden scroll;
+	cursor: grab;
+}
+.infographic h2{
+	margin-bottom: 20px;
+}
+.barchart-elem{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	margin-bottom: 3px;
+	height: 1.2em;
+}
+.barchart-elem-region{
+	width: 25%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin-right: 10px;
+}
+.barchart-elem-graph{
+	width: 50%;
+}
+.barchart-elem-graph span{
+	background-color: #00356c;
+	height: 100%;
+	display: inline-block;
+}
+.barchart-elem-number{
+	margin-left: 10px;
+}

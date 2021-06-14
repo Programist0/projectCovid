@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>COVID statics in the world and in the Ukraine</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+<body>
+	<div class="container main">
+		<div class="container container-calendar">
+			Виберіть дату:
+			<input type="date" value="2020-03-06" min="2019-12-31" max="2020-05-17" id="date-picker">
+		</div>
+		<div class="tabs">
+			<div class="tabs_nav">
+				<a href="#ukraine" class="tab_links active">Ukraine</a>
+				<a href="#world" class="tab_links">World</a>
+			</div>
+		</div>
+		<div id="ukraine" class="tabs_pane tabs_pane_show">
+			<h2>Україна</h2>
+			<div class="container">
+				<table class="table table-ua">
+					<thead class="table_head">
+						<tr class="table_row table_head-row">
+							<td class="table_cell table_head-cell region">
+								<span>Область</span>
+								<span class="sort-wrapper">
+									<span class="sort-up sort" data-sort="ua-region-up">
+										
+									</span>
+									<span class="sort-down sort" data-sort="ua-region-down">
+										
+									</span>
+								</span>
+							</td>
+							<td class="table_cell table_head-cell confirmed"><span>Підтверджено</span><span class="sort-wrapper">
+									<span class="sort-up sort" data-sort="ua-confirmed-up">
+										
+									</span>
+									<span class="sort-down sort" data-sort="ua-confirmed-down">
+										
+									</span>
+								</span></td>
+							<td class="table_cell table_head-cell death"><span>Померло</span><span class="sort-wrapper">
+									<span class="sort-up sort" data-sort="ua-death-up">
+										
+									</span>
+									<span class="sort-down sort" data-sort="ua-death-down">
+										
+									</span>
+								</span></td>
+							<td class="table_cell table_head-cell recovered"><span>Одужало</span><span class="sort-wrapper">
+									<span class="sort-up sort"data-sort="ua-recovered-up">
+										
+									</span>
+									<span class="sort-down sort"data-sort="ua-recovered-down">
+										
+									</span>
+								</span></td>
+						</tr>
+					</thead>
+					<tbody class="table_body"></tbody>
+				</table>
+			</div>
+		</div>
+		<div id="world" class="tabs_pane">
+			<h2>Світ</h2>
+			<div class="container">
+				<table class="table table-world">
+					<thead class="table_head">
+						<tr class="table_row table_head-row">
+							<td class="table_cell table_head-cell"><span>Країна</span><span class="sort-wrapper">
+									<span class="sort-up sort" data-sort="world-region-up">
+										
+									</span>
+									<span class="sort-down sort" data-sort="world-region-down">
+										
+									</span>
+								</span></td>
+							<td class="table_cell table_head-cell"><span>Підтверджено</span><span class="sort-wrapper">
+									<span class="sort-up sort" data-sort="world-confirmed-up">
+										
+									</span>
+									<span class="sort-down sort" data-sort="world-confirmed-down">
+										
+									</span>
+								</span></td>
+							<td class="table_cell table_head-cell"><span>Померло</span><span class="sort-wrapper">
+									<span class="sort-up sort" data-sort="world-death-up">
+										
+									</span>
+									<span class="sort-down sort" data-sort="world-death-down">
+										
+									</span>
+								</span></td>
+							<td class="table_cell table_head-cell"><span>Одужало</span><span class="sort-wrapper">
+									<span class="sort-up sort" data-sort="world-recovered-up">
+										
+									</span>
+									<span class="sort-down sort" data-sort="world-recovered-down">
+										
+									</span>
+								</span></td>
+						</tr>
+					</thead>
+					<tbody class="table_body">
+						
+					</tbody>
+					<!--
+					<tbody>
+						<tr class="table_row">
+							<td class="table_cell">x</td>
+							<td class="table_cell">x</td>
+							<td class="table_cell">x</td>
+							<td class="table_cell">x</td>
+						</tr>
+						<tr class="table_row">
+							<td class="table_cell">x</td>
+							<td class="table_cell">x</td>
+							<td class="table_cell">x</td>
+							<td class="table_cell">x</td>
+						</tr>
+						<tr class="table_row">
+							<td class="table_cell">x</td>
+							<td class="table_cell">x</td>
+							<td class="table_cell">x</td>
+							<td class="table_cell">x</td>
+						</tr>
+						<tr class="table_row">
+							<td class="table_cell">x</td>
+							<td class="table_cell">x</td>
+							<td class="table_cell">x</td>
+							<td class="table_cell">x</td>
+						</tr>
+					</tbody>
+					-->
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="infographic">
+		<h2>Розподіл всіх підтвердженних випадків захворювання</h2>
+		<div class="infographic-barchart">
+			<div class="barchart-elem">
+				<div class="barchart-elem-region">Вінницька область</div>
+				<div class="barchart-elem-graph"></div>
+				<div class="barchart-elem-number">580</div>
+			</div>
+			<div class="barchart-elem">
+				<div class="barchart-elem-region">Київська область</div>
+				<div class="barchart-elem-graph"></div>
+				<div class="barchart-elem-number">880</div>
+			</div>
+			<div class="barchart-elem">
+				<div class="barchart-elem-region">Львівська область</div>
+				<div class="barchart-elem-graph"></div>
+				<div class="barchart-elem-number">380</div>
+			</div>
+		</div>
+	</div>
+	<script src="script.js"></script>
+</body>
+</html>
